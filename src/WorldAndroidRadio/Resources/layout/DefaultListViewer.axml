@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/layout_bg"
     android:orientation="vertical">
-  <ListView
-      android:id="@+id/DefaultMenuListView"
-      android:layout_height="0dip"
-      android:layout_width="match_parent"
-      android:layout_weight="1" />
+    <ListView
+        android:layout_height="0dip"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/DefaultListView" />
 </LinearLayout>
