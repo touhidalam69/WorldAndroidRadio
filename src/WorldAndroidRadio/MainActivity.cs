@@ -1,107 +1,105 @@
-﻿using Android;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.Media;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Java.IO;
+using System.Collections.Generic;
 
 namespace WorldAndroidRadio
 {
     [Activity(Label = "World Radio", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        public static Button fabPlay;
+        List<RadioChannel> MenuLst = new List<RadioChannel>();
+        ListView myListView;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ListRadio aListRadio = new ListRadio();
+
             base.OnCreate(savedInstanceState);
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
+            StrictMode.SetThreadPolicy(policy);
 
-            fabPlay = FindViewById<Button>(Resource.Id.fabPlay);
-            fabPlay.Click += (o, e) =>
-            {
-                MediaPlayerManager.StopePlayer();
-            };
-            MediaPlayerManager.CheckPlayer();
+            MenuLst = aListRadio.GetAllCountry();
+
+            myListView = FindViewById<ListView>(Resource.Id.DefaultMenuListView);
+
+            myListView.Adapter = GetAdapter();
+            myListView.ItemClick += MyListView_ItemClick;
         }
-    }
-    public class MediaPlayerManager
-    {
-        public static MediaPlayer player;
-        public static ProgressDialog mDialog;
-        public static async void Play(string Url, Context context)
+        private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if (player == null)
-            {
-                player = new MediaPlayer();
-                player.SetAudioStreamType(Stream.Music);
-            }
-            else {
-                player.Reset();
-                MainActivity.fabPlay.Visibility = ViewStates.Invisible;
-            }
             try
             {
-                await player.SetDataSourceAsync(Url);
-                player.PrepareAsync();
-                mDialog = new ProgressDialog(context);
-                mDialog.Window.SetType(WindowManagerTypes.SystemAlert);
-                mDialog.SetMessage("Please wait...");
-                mDialog.Show();
+                Intent intent = new Intent(this, typeof(RadioChannelActivity));
+                intent.PutExtra(RadioChannelActivity.Category, MenuLst[e.Position].Country);
+                this.StartActivity(intent);
             }
-            catch
+            catch (IOException ex)
             {
-                Toast.MakeText(context, "Radio Station not Responding", ToastLength.Long).Show();
-            }
-            player.Prepared += Player_Prepared;
-            player.Error += (sender, args) =>
-            {
-                Toast.MakeText(context, "Radio Station not Responding", ToastLength.Long).Show();
-                mDialog.Dismiss();
-                StopePlayer();
-            };
-        }
-
-        private static void Player_Prepared(object sender, System.EventArgs e)
-        {
-            player.Start();
-            mDialog.Dismiss();
-            MainActivity.fabPlay.Visibility = ViewStates.Visible;
-        }
-
-        public static bool CheckPlayer()
-        {
-            if (player != null)
-            {
-                if (player.IsPlaying)
-                {
-                    MainActivity.fabPlay.Visibility = ViewStates.Visible;
-                    return true;
-                }
-                else
-                {
-                    MainActivity.fabPlay.Visibility = ViewStates.Invisible;
-                    return false;
-                }
-            }
-            else
-            {
-                MainActivity.fabPlay.Visibility = ViewStates.Invisible;
-                return false;
+                Toast.MakeText(this, ex.Message, ToastLength.Long).Show();
             }
         }
-        public static bool StopePlayer()
+        public ListViewMenuAdapter GetAdapter()
         {
-            if (CheckPlayer())
+            ListViewMenuAdapter adapter = new ListViewMenuAdapter(this, MenuLst, "Country");
+            return adapter;
+        }
+        protected override void OnPause()
+        {
+            base.OnPause();
+        }
+        protected override void OnResume()
+        {
+            base.OnResume();
+        }
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
+    }
+    public class ListViewMenuAdapter : BaseAdapter<RadioChannel>
+    {
+        private List<RadioChannel> MenuList;
+        private Context LstContext;
+        private string flag;
+        public ListViewMenuAdapter(Context cntext, List<RadioChannel> items, string flag)
+        {
+            MenuList = items;
+            LstContext = cntext;
+            this.flag = flag;
+        }
+        public override int Count
+        {
+            get
             {
-                player.Stop();
-                player.Reset();
-                MainActivity.fabPlay.Visibility = ViewStates.Invisible;
+                return MenuList.Count;
+            }
+        }
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+        public override RadioChannel this[int position]
+        {
+            get
+            {
+                return MenuList[position];
+            }
+        }
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            View row = convertView;
+            if (row == null)
+            {
+                row = LayoutInflater.From(LstContext).Inflate(Resource.Layout.MenuAdapter, null, false);
             }
 
-            return true;
+            TextView btnMenuItem = row.FindViewById<TextView>(Resource.Id.btnMenuItem);
+            btnMenuItem.Text = flag == "Country" ? MenuList[position].Country : MenuList[position].Name;
+            return row;
         }
     }
 }

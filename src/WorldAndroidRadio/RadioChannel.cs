@@ -11,7 +11,7 @@ namespace WorldAndroidRadio
     }
     public class ListRadio
     {
-        string Country = string.Empty;
+         string Country = string.Empty;
         public ListRadio() { }
         public ListRadio(string Country)
         {
@@ -24,6 +24,10 @@ namespace WorldAndroidRadio
         public List<RadioChannel> GetCountryWiseRadio()
         {
             return lstRadio.Where(p => p.Country == Country).OrderBy(x => x.Name).ToList();
+        }
+        public List<RadioChannel> GetAllRadio()
+        {
+            return lstRadio.OrderBy(x => x.Name).ToList();
         }
 
         List<RadioChannel> lstRadio = new List<RadioChannel>()
