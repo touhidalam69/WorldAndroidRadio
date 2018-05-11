@@ -49,7 +49,7 @@ namespace WorldAndroidRadio
                 case Resource.Id.About:
                     AlertDialog.Builder Alertbuilder = new AlertDialog.Builder(this);
                     Alertbuilder.SetTitle("About World Radio");
-                    Alertbuilder.SetMessage("World Radio Version 1.0.0. Designed and Developed by Touhid Alam");
+                    Alertbuilder.SetMessage("World Radio Version 1.0.1. Designed and Developed by Touhid Alam");
                     Alertbuilder.SetPositiveButton("OK", (s, ss) => { });
                     Alertbuilder.SetNegativeButton("Cancel", (s, ss) => { }).Create();
                     Alertbuilder.Show();
