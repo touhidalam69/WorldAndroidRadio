@@ -12,10 +12,12 @@ namespace WorldAndroidRadio
 {
     [Activity(Label = "Radio List", MainLauncher = false, ScreenOrientation = ScreenOrientation.Portrait)]
 
+
     public class RadioChannelActivity : Activity
     {
         List<RadioChannel> RadioChannelLst;
         public const string Category = "Bangladesh";
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,7 +27,8 @@ namespace WorldAndroidRadio
             SetContentView(Resource.Layout.DefaultListViewer);
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
             StrictMode.SetThreadPolicy(policy);
-
+            
+            // Getting Country wise Channel List
             ListView myListView = FindViewById<ListView>(Resource.Id.DefaultListView);
 
             RadioChannelLst = aListRadio.GetCountryWiseRadio();
@@ -38,6 +41,8 @@ namespace WorldAndroidRadio
             MenuInflater.Inflate(Resource.Menu.ListPageMenu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
+
+        //When Back Button will press
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -49,12 +54,15 @@ namespace WorldAndroidRadio
 
             return base.OnOptionsItemSelected(item);
         }
+
+        //When Channel Selected this event will fire
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             if (isOnline())
             {
                 try
                 {
+                    //Calling player to play
                     MediaPlayerManager.Play(RadioChannelLst[e.Position].Url, this);
                 }
                 catch (IOException ex)
@@ -67,6 +75,7 @@ namespace WorldAndroidRadio
                 Toast.MakeText(this, "Check your Internet Connection", ToastLength.Long).Show();
             }
         }
+
         public ListViewMenuAdapter GetAdapter()
         {
             ListViewMenuAdapter adapter = new ListViewMenuAdapter(this, RadioChannelLst, "Channel");
@@ -84,6 +93,8 @@ namespace WorldAndroidRadio
         {
             base.OnDestroy();
         }
+
+        //Check Internet Connectivity
         public bool isOnline()
         {
             try

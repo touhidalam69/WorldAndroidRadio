@@ -13,6 +13,8 @@ namespace WorldAndroidRadio
     {
         List<RadioChannel> MenuLst = new List<RadioChannel>();
         ListView myListView;
+        
+        // This Function will call when application will loaded
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ListRadio aListRadio = new ListRadio();
@@ -22,18 +24,24 @@ namespace WorldAndroidRadio
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
             StrictMode.SetThreadPolicy(policy);
 
+            // Get Country category to load on landing page
             MenuLst = aListRadio.GetAllCountry();
 
             myListView = FindViewById<ListView>(Resource.Id.DefaultMenuListView);
 
+            // Fill listview throw Adapter
             myListView.Adapter = GetAdapter();
+            // Added Event on Country click
             myListView.ItemClick += MyListView_ItemClick;
         }
+        // Top Raght Menu will be created by this event
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.MainMenu, menu);
             return base.OnCreateOptionsMenu(menu);
         }
+
+        //Menu item click event when select a menu item
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -53,6 +61,8 @@ namespace WorldAndroidRadio
 
             return base.OnOptionsItemSelected(item);
         }
+
+        // Country category select event Channenl list will apear
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
@@ -84,6 +94,8 @@ namespace WorldAndroidRadio
             base.OnDestroy();
         }
     }
+
+    // Making Adapter for list view
     public class ListViewMenuAdapter : BaseAdapter<RadioChannel>
     {
         private List<RadioChannel> MenuList;

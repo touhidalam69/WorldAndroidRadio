@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace WorldAndroidRadio
 {
+    //Declaring Radio Channel Property
     public class RadioChannel
     {
         public string Country { get; set; }
@@ -17,19 +18,22 @@ namespace WorldAndroidRadio
         {
             this.Country = Country;
         }
+        //This function will return all Country
         public List<RadioChannel> GetAllCountry()
         {
             return lstRadio.GroupBy(p => p.Country).Select(grp => grp.FirstOrDefault()).OrderBy(x => x.Country).ToList();
         }
+        //This Function will Return Country wise Channellist
         public List<RadioChannel> GetCountryWiseRadio()
         {
             return lstRadio.Where(p => p.Country == Country).OrderBy(x => x.Name).ToList();
         }
+        //This will Return all Radio Channel
         public List<RadioChannel> GetAllRadio()
         {
             return lstRadio.OrderBy(x => x.Name).ToList();
         }
-
+        //Radio Channel List
         List<RadioChannel> lstRadio = new List<RadioChannel>()
         {
            new RadioChannel {  Country = "Indonesia", Name = "ANDIKA FM",  Url = "http://stream2.andikafm.com:1057/andikafm" },
