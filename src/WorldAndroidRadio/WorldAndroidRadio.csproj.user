@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Nexus</SelectedDevice>
     <DefaultDevice>Nexus</DefaultDevice>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

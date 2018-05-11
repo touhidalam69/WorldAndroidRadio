@@ -41,11 +41,73 @@ namespace WorldAndroidRadio
 			}
 		}
 		
-		public partial class Layout
+		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Main = 2130837504;
+			public const int homeIcon = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int layout_bg = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int red_button = 2130837507;
+			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Drawable()
+			{
+			}
+		}
+		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f070004
+			public const int About = 2131165188;
+			
+			// aapt resource value: 0x7f070000
+			public const int DefaultListView = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int DefaultMenuListView = 2131165185;
+			
+			// aapt resource value: 0x7f070005
+			public const int Exit = 2131165189;
+			
+			// aapt resource value: 0x7f070003
+			public const int Home = 2131165187;
+			
+			// aapt resource value: 0x7f070002
+			public const int btnMenuItem = 2131165186;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
+		public partial class Layout
+		{
+			
+			// aapt resource value: 0x7f030000
+			public const int DefaultListViewer = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int MenuAdapter = 2130903042;
 			
 			static Layout()
 			{
@@ -57,11 +119,30 @@ namespace WorldAndroidRadio
 			}
 		}
 		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int ListPageMenu = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int MainMenu = 2131099649;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int app_name = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int app_name = 2130968576;
 			
 			static String()
 			{
@@ -69,6 +150,22 @@ namespace WorldAndroidRadio
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int button_text = 2131034112;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

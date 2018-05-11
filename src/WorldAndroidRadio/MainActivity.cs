@@ -29,6 +29,30 @@ namespace WorldAndroidRadio
             myListView.Adapter = GetAdapter();
             myListView.ItemClick += MyListView_ItemClick;
         }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.MainMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.About:
+                    AlertDialog.Builder Alertbuilder = new AlertDialog.Builder(this);
+                    Alertbuilder.SetTitle("About World Radio");
+                    Alertbuilder.SetMessage("World Radio Version 1.0.0. Designed and Developed by Touhid Alam");
+                    Alertbuilder.SetPositiveButton("OK", (s, ss) => { });
+                    Alertbuilder.SetNegativeButton("Cancel", (s, ss) => { }).Create();
+                    Alertbuilder.Show();
+                    return true;
+                case Resource.Id.Exit:
+                    Finish();
+                    return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             try
