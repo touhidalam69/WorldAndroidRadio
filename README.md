@@ -8,7 +8,7 @@ This is an Open source Universal Radio Project. Initially we added thirty Radio 
 #### 2. Install worldradio.apk file on your android device
 
 ### How to Play
-#### 1. Open Application
+#### 1. Open the Application
 #### 2. Select Country from Country list
-#### 3. Select Radio Channel from Country list
-#### 4. Enjoy
+#### 3. Select Radio Channel from Channel list
+#### 4. Enjoy the Radio Channel
