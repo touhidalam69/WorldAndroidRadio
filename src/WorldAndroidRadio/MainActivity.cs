@@ -13,12 +13,14 @@ namespace WorldAndroidRadio
     {
         List<RadioChannel> MenuLst = new List<RadioChannel>();
         ListView myListView;
-        
+
+        // Declaring playbutton
+        public static ImageButton btnPlay;
+
         // This Function will call when application will loaded
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ListRadio aListRadio = new ListRadio();
-
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
@@ -33,6 +35,13 @@ namespace WorldAndroidRadio
             myListView.Adapter = GetAdapter();
             // Added Event on Country click
             myListView.ItemClick += MyListView_ItemClick;
+
+            btnPlay = FindViewById<ImageButton>(Resource.Id.btnPlay);
+            btnPlay.Click += (o, e) =>
+            {
+                MediaPlayerManager.StopePlayer();
+            };
+            MediaPlayerManager.CheckPlayer();
         }
         // Top Raght Menu will be created by this event
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -139,4 +148,3 @@ namespace WorldAndroidRadio
         }
     }
 }
-
