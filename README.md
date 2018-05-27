@@ -1,7 +1,7 @@
 # Basic info and Installation process of WorldAndroidRadio
 
 ### About this Project
-This is an Open source Universal Radio Project. Initially, we added thirty Radio channels from three countries. It is our goal to add all available radio channels from all over the world. As it's an Open source Android application, anyone will be able to add their favorite channels on this application.
+This is an Open source Universal Radio Project. We added Seventy one Radio channels from six countries. It is our goal to add all available radio channels from all over the world. As it's an Open source Android application, anyone will be able to add their favorite channels on this application.
 
 ### Installation Steps
 #### 1. Open Published_APK folder
