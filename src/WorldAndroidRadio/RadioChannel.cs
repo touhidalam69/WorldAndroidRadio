@@ -85,7 +85,40 @@ namespace WorldAndroidRadio
            new RadioChannel {  Country = "Turkey", Name = "08 Haber", Url = "http://yayin.netyayin.net:8008/" },
            new RadioChannel {  Country = "Turkey", Name = "1001 FM", Url = "http://yayin3.canlitv.com:9050/" },
            new RadioChannel {  Country = "Turkey", Name = "Arabesk Turk", Url = "http://37.247.101.101:5934/" },
-           new RadioChannel {  Country = "Turkey", Name = "Arabesk Turkiye", Url = "http://arabeskturkiye.xyz:9312/" }
+           new RadioChannel {  Country = "Turkey", Name = "Arabesk Turkiye", Url = "http://arabeskturkiye.xyz:9312/" },
+
+            // Channnel of India
+           new RadioChannel {  Country = "India", Name = "Aakashvani Maitree", Url = "http://radio.mediaisyou.com/live3.mp3" },
+           new RadioChannel {  Country = "India", Name = "AIR Kannada", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Malayalam", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Marathi", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Odia", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Punjabi", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Raagam", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "AIR Telugu", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "India AIR Urdu", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "FM Gold", Url = "http://www.liveonlineradio.net/coding/jwplayer6l/jwplayer.flash.swf" },
+           new RadioChannel {  Country = "India", Name = "Al Islah Radio", Url = "http://alislahradio.com:8296/1" },
+           new RadioChannel {  Country = "India", Name = "Apna eRadio", Url = "http://www.apnaeradio.com:8100/" },
+           new RadioChannel {  Country = "India", Name = "Apna eRadio Classics", Url = "http://www.apnaeradio.com:8300/" },
+           new RadioChannel {  Country = "India", Name = "BBC Hindi", Url = "http://bbcwssc.ic.llnwd.net/stream/bbcwssc_mp1_ws-hinda_backup?type=.mp3" },
+           new RadioChannel {  Country = "India", Name = "Awaz e Haq", Url = "http://s3.viastreaming.net:8520/" },
+           new RadioChannel {  Country = "India", Name = "Astrology FM", Url = "http://stream.ganeshaspeaks.fm/stream:80/;stream.mp3" },
+
+            // Channnel of Netherlands
+           new RadioChannel {  Country = "Netherlands", Name = "18 Hits", Url = "http://stream.18hits.fm/18Hmp3" },
+           new RadioChannel {  Country = "Netherlands", Name = "192 Radio", Url = "http://server-14.stream-server.nl:8030/" },
+           new RadioChannel {  Country = "Netherlands", Name = "24 Kitchen Radio", Url = "http://77.164.95.243:8040/" },
+           new RadioChannel {  Country = "Netherlands", Name = "40UP Radio", Url = "http://radio.40up.nl/40up1" },
+           new RadioChannel {  Country = "Netherlands", Name = "A1 Lounge", Url = "http://radio.a1lounge.com/radio" },
+           new RadioChannel {  Country = "Netherlands", Name = "ABTT Adje Boumans Top Tien", Url = "http://server-06.stream-server.nl:8600/" },
+           new RadioChannel {  Country = "Netherlands", Name = "Accent FM", Url = "http://caster02.streampakket.com:8091/high" },
+           new RadioChannel {  Country = "Netherlands", Name = "Achterhoek FM", Url = "http://icecast.streamone.nl/h7MniPPz5a" },
+           new RadioChannel {  Country = "Netherlands", Name = "Acoustic FM", Url = "http://listen.radionomy.com/acoustic-fm" },
+           new RadioChannel {  Country = "Netherlands", Name = "Afrodread FM", Url = "http://shaincast.caster.fm:35561/listen.mp3" },
+           new RadioChannel {  Country = "Netherlands", Name = "Albatros En Patricia", Url = "http://195.154.168.210:8034/" },
+           new RadioChannel {  Country = "Netherlands", Name = "Aladna FM", Url = "http://aladnafm.shoutcaststream.com:8386/stream" }
+
         };
     }
 }

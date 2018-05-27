@@ -54,7 +54,10 @@ namespace WorldAndroidRadio
 			public const int layout_bg = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int red_button = 2130837507;
+			public const int playbuttonImage = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int red_button = 2130837508;
 			
 			static Drawable()
 			{
@@ -69,8 +72,8 @@ namespace WorldAndroidRadio
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int About = 2131165188;
+			// aapt resource value: 0x7f070005
+			public const int About = 2131165189;
 			
 			// aapt resource value: 0x7f070000
 			public const int DefaultListView = 2131165184;
@@ -78,14 +81,17 @@ namespace WorldAndroidRadio
 			// aapt resource value: 0x7f070001
 			public const int DefaultMenuListView = 2131165185;
 			
-			// aapt resource value: 0x7f070005
-			public const int Exit = 2131165189;
+			// aapt resource value: 0x7f070006
+			public const int Exit = 2131165190;
+			
+			// aapt resource value: 0x7f070004
+			public const int Home = 2131165188;
 			
 			// aapt resource value: 0x7f070003
-			public const int Home = 2131165187;
+			public const int btnMenuItem = 2131165187;
 			
 			// aapt resource value: 0x7f070002
-			public const int btnMenuItem = 2131165186;
+			public const int btnPlay = 2131165186;
 			
 			static Id()
 			{
